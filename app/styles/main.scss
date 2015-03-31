@@ -33,76 +33,29 @@ body {
 }
 
 .app-bar {
+  box-sizing: border-box;
   display: block;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #4285f4;
+  background-color: transparent;
   overflow: hidden;
   z-index: 1;
 }
 
-.app-bar-container {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  height: 60px;
-  position: relative;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
+.app-bar a img.logo {
+  box-sizing: border-box;
+  display: block;
   margin: 0 auto;
-}
-
-.app-bar .logo {
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  font-size: 2em;
-  line-height: 60px;
-  margin: 0 16px;
-  padding: 0;
-  color: #fefefe;
-  float: none;
   max-width: none;
   font-weight: 300;
-  display: initial;
 }
 
 .app-bar .logo a {
   text-decoration: none;
   color: inherit;
   font-weight: normal;
-}
-
-.app-bar-actions {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  z-index: 2;
-}
-
-.app-bar button {
-  width: 60px;
-  height: 60px;
-  background-image: none;
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  display: inline-block;
-  -webkit-transition: background-color 0.2s ease-out;
-          transition: background-color 0.2s ease-out;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.app-bar button img {
-  height: 24px;
-  width: 24px;
 }
 
 .app-bar button:hover {
@@ -146,15 +99,16 @@ main {
 }
 
 main.home {
-  background-image: url("/images/Background.png");
 
   section.hotels--panels {
+    width: 100%;
+
     .hotel-aj--panel,
     .hotel-sp--panel {
       img.hotel--logo {
         box-sizing: border-box;
         display: block;
-        margin: 20px 0;
+        margin: 20px auto;
       }
 
       label.hotel--firstletter {
@@ -163,7 +117,7 @@ main.home {
         border-width: 2px;
         opacity: 0.4;
         padding: 25px; 
-        margin: 35px 20px;
+        margin: 5px 20px;
         text-align: center;  
         font-size: 1.4em;  
         font-weight: 800;     
@@ -171,6 +125,17 @@ main.home {
 
       p.hotel--description {
         height: 100%;
+        padding: 0 20px;
+      }
+
+      ul.hotel--pictures {
+        list-style-type: none; 
+        margin: 15px auto;
+        padding: 0;
+        
+        li {
+          display: inline-block;
+        }
       }
     }
 
@@ -240,7 +205,7 @@ main.home {
   }
 
   main {
-    max-width: 864px;
+    max-width: $wideContainer;
     padding-top: 0;
     min-height: initial;
   }

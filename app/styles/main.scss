@@ -24,12 +24,14 @@ body {
 }
 
 body {
+  background-image: url("/images/Background.png");
   position: relative;
   font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;
   font-weight: 300;
   background-color: #fff;
   box-sizing: border-box;
   min-height: 100%;
+  z-index: 0;
 }
 
 .app-bar {
@@ -94,7 +96,6 @@ ol {
 main {
   margin: 0 auto;
   /* Height of the header */
-  padding: 60px 16px 16px 16px;
   min-height: 100%;
 }
 
@@ -129,11 +130,13 @@ main.home {
       }
 
       ul.hotel--pictures {
-        list-style-type: none; 
+        list-style-type: none;
         margin: 15px auto;
         padding: 0;
         
         li {
+          margin: 0;
+          padding: 0;
           display: inline-block;
         }
       }

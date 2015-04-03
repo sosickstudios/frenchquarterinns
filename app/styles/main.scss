@@ -7,49 +7,31 @@
 @import 'components/components';
 
 $sp-primary-white: #e8eff2;
-$sp-primary-blue: #51839f;
+$sp-primary-blue: #074f76;
 $sp-secondary-blue: #6b95ad;
 
-$aj-primary-tan: #a28d69;
+$aj-primary-tan: #7b5d2a;
 $aj-secondary-tan: #dacfb7;
 
 $aj-primary-gold: #9d8a10;
 
-html,
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+html {
+  background: url(/images/Background.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 body {
   position: relative;
-  font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;
+  font-family: 'Droid Serif', serif;
   font-weight: 300;
-  background-color: #fff;
-  box-sizing: border-box;
-  min-height: 100%;
-  backface-visibility: hidden;
 }
 
-.home--background {
-  height: inherit;
-  width: inherit;
-  position: fixed;
-  // background-image: url("/images/Background.png");
-  // background-attachment: fixed;
-  // background-repeat: none;
-  z-index: -1;
-
-  &::after {
-    content: ' ';
-    visibility: hidden;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-  }
+.home--header {
+  text-align: center;
+  padding-top: 20px;
 }
 
 .app-bar {
@@ -120,67 +102,54 @@ main {
 main.home {
 
   section.hotels--panels {
-    width: 100%;
-    margin-top: 50px;
+    margin-top: 20px;
+    transform: translateZ(0);
 
     .hotel-aj--panel,
     .hotel-sp--panel {
-      position: relative;
-      z-index: 1;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-
-      .panel--background {
-        z-index: -1;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        opacity: 0.8;
-
-        &::after {
-          content: ' ';
-          visibility: hidden;
-          top: 0;
-          bottom: 0;
-          right: 0;
-          left: 0;
-          z-index: -1;
-        }
-      }
+      min-height: 1000px;
+      border: 0 solid rgba(#fff, 0.7);
 
       img.hotel--logo {
-        min-height: 100px;
+        height: 80px;
+        width: auto;
         box-sizing: border-box;
         display: block;
-        margin: 20px auto;
+        margin: 10px auto;
       }
 
       label.hotel--firstletter {
         float:left;
         border-style: solid;
-        border-width: 2px;
-        // opacity: 0.9;
-        padding: 25px; 
+        border-width: 1px;
+        padding: 15px 10px;
         margin: 5px 20px;
-        text-align: center;  
-        font-size: 1.4em;  
-        font-weight: 800;     
+        text-align: center;
+        font-size: 3.0em;
       }
 
       p.hotel--description {
         height: 100%;
         padding: 0 20px;
+        font-size: 0.9em;
+        line-height: 1.4em;
       }
 
       ul.hotel--pictures {
         list-style-type: none;
         margin: 15px auto;
         padding: 0;
-        
+        overflow: hidden;
+        white-space: nowrap;
+        font-size: 0;
+        border: 2px solid #fff;
+        border-width: 4px 0;
+
+        img {
+          max-height: 175px;
+        }
+
         li {
-          max-width: 25%;
           margin: 0;
           padding: 0;
           display: inline-block;
@@ -189,15 +158,13 @@ main.home {
     }
 
     .hotel-aj--panel {
-      .panel--background {
-        background-color: $aj-primary-tan;
-      }
-      
+      background-color: rgba($aj-primary-tan, 0.7);
+      border-width: 1px 0 0 1px;
 
       label.hotel--firstletter {
-        border-color: $aj-primary-gold;
-        background-color: #b09e7f;
-        color: $aj-secondary-tan;
+        border-color: rgba(#fff, 0.35);
+        background-color: rgba(#fff, 0.15);
+        color: #dacfb7;
       }
 
       p.hotel--description {
@@ -206,20 +173,19 @@ main.home {
     }
 
     .hotel-sp--panel {
-      .panel--background {
-        background-color: $sp-primary-blue;
-      }
-      
+      background-color: rgba($sp-secondary-blue, 0.7);
+      border-width: 1px 1px 0 0;
+
       label.hotel--firstletter {
-        border-color: $sp-primary-white;
-        background-color: $sp-secondary-blue;
-        color: $sp-primary-white;
+        border-color: rgba(#e8eff2, 0.35);
+        background-color: rgba(#e8eff2, 0.15);
+        color: #e8eff2;
       }
 
       p.hotel--description {
         color: $sp-primary-white;
       }
-    }      
+    }
   }
 }
 

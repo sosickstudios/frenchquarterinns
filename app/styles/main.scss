@@ -24,14 +24,32 @@ body {
 }
 
 body {
-  background-image: url("/images/Background.png");
   position: relative;
   font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;
   font-weight: 300;
   background-color: #fff;
   box-sizing: border-box;
   min-height: 100%;
-  z-index: 0;
+  backface-visibility: hidden;
+}
+
+.home--background {
+  height: inherit;
+  width: inherit;
+  position: fixed;
+  // background-image: url("/images/Background.png");
+  // background-attachment: fixed;
+  // background-repeat: none;
+  z-index: -1;
+
+  &::after {
+    content: ' ';
+    visibility: hidden;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
 }
 
 .app-bar {
@@ -39,7 +57,7 @@ body {
   display: block;
   width: 100%;
   position: fixed;
-  top: 0;
+  top: 25px;
   left: 0;
   background-color: transparent;
   overflow: hidden;
@@ -103,10 +121,37 @@ main.home {
 
   section.hotels--panels {
     width: 100%;
+    margin-top: 50px;
 
     .hotel-aj--panel,
     .hotel-sp--panel {
+      position: relative;
+      z-index: 1;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+
+      .panel--background {
+        z-index: -1;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+
+        &::after {
+          content: ' ';
+          visibility: hidden;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          z-index: -1;
+        }
+      }
+
       img.hotel--logo {
+        min-height: 100px;
         box-sizing: border-box;
         display: block;
         margin: 20px auto;
@@ -116,7 +161,7 @@ main.home {
         float:left;
         border-style: solid;
         border-width: 2px;
-        opacity: 0.4;
+        // opacity: 0.9;
         padding: 25px; 
         margin: 5px 20px;
         text-align: center;  
@@ -135,6 +180,7 @@ main.home {
         padding: 0;
         
         li {
+          max-width: 25%;
           margin: 0;
           padding: 0;
           display: inline-block;
@@ -143,7 +189,10 @@ main.home {
     }
 
     .hotel-aj--panel {
-      background-color: $aj-primary-tan;
+      .panel--background {
+        background-color: $aj-primary-tan;
+      }
+      
 
       label.hotel--firstletter {
         border-color: $aj-primary-gold;
@@ -157,8 +206,10 @@ main.home {
     }
 
     .hotel-sp--panel {
-      background-color: $sp-primary-blue;
-
+      .panel--background {
+        background-color: $sp-primary-blue;
+      }
+      
       label.hotel--firstletter {
         border-color: $sp-primary-white;
         background-color: $sp-secondary-blue;

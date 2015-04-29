@@ -107,8 +107,9 @@ main.home {
 
     .hotel-aj--panel,
     .hotel-sp--panel {
-      min-height: 1000px;
+      min-height: inherit;
       border: 0 solid rgba(#fff, 0.7);
+      padding-bottom: 40px;
 
       img.hotel--logo {
         height: 80px;
@@ -155,11 +156,28 @@ main.home {
           display: inline-block;
         }
       }
+
+      button.hotel--reservations {
+        display: block;
+        margin: 0 auto;
+        margin-top: 25px;
+        padding: 10px 20px;
+        border-style: solid;
+        border-width: 4px;
+        font-size: 1.2em;
+      }
+
+      p.hotel--address {
+        text-align: center;
+        font-size: 1.0em;
+        font-weight: 650;
+        margin-bottom: 5px;
+      }
     }
 
     .hotel-aj--panel {
       background-color: rgba($aj-primary-tan, 0.7);
-      border-width: 1px 0 0 1px;
+      border-width: 1px 0 1px 1px;
 
       label.hotel--firstletter {
         border-color: rgba(#fff, 0.35);
@@ -170,11 +188,26 @@ main.home {
       p.hotel--description {
         color: $aj-secondary-tan;
       }
+
+      button.hotel--reservations {
+        border-color: rgba(#fff, 0.35);
+        background-color: rgba($aj-primary-tan, 0.6);
+        color: #dacfb7;
+
+        &:hover {
+          background-color: rgba($aj-primary-tan, 0.8);
+          color: #fff;
+        }
+      }
+
+      p.hotel--address {
+        color: #dacfb7;
+      }
     }
 
     .hotel-sp--panel {
       background-color: rgba($sp-secondary-blue, 0.7);
-      border-width: 1px 1px 0 0;
+      border-width: 1px 1px 1px 0;
 
       label.hotel--firstletter {
         border-color: rgba(#e8eff2, 0.35);
@@ -184,6 +217,21 @@ main.home {
 
       p.hotel--description {
         color: $sp-primary-white;
+      }
+
+      button.hotel--reservations {
+        border-color: rgba(#fff, 0.35);
+        background-color: rgba($sp-secondary-blue, 0.6);
+        color: #e8eff2;
+
+        &:hover {
+          background-color: rgba($sp-secondary-blue, 0.8);
+          color: #fff;
+        }
+      }
+
+      p.hotel--address {
+        color: #e8eff2;
       }
     }
   }

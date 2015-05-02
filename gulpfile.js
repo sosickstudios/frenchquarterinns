@@ -185,7 +185,7 @@ gulp.task('default', ['clean', 'serve'], function (cb) {
 });
 
 gulp.task('compile', ['clean'], function(cb) {
-  runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'copy'], cb);
+  runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'copy', 'compress'], cb);
 });
 
 // Run PageSpeed Insights

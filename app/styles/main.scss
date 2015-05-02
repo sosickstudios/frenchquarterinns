@@ -32,6 +32,10 @@ body {
 .home--header {
   text-align: center;
   padding-top: 20px;
+
+  .logo {
+    max-width: 100vw;
+  }
 }
 
 .app-bar {

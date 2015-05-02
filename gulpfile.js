@@ -178,6 +178,10 @@ gulp.task('default', ['clean', 'serve'], function (cb) {
   runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'copy'], cb);
 });
 
+gulp.task('compile', ['clean'], function(cb) {
+  runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'copy'], cb);
+});
+
 // Run PageSpeed Insights
 gulp.task('pagespeed', function (cb) {
   // Update the below URL to the public URL of your site

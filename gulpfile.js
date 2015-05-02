@@ -23,6 +23,7 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var del = require('del');
+var critical = require('critical');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var pagespeed = require('psi');
@@ -85,16 +86,34 @@ gulp.task('fonts', function () {
     .pipe($.size({title: 'fonts'}));
 });
 
+gulp.task('copystyles', function () {
+    return gulp.src(['dist/styles/main.css'])
+        .pipe($.rename({
+            basename: "site" // site.css
+        }))
+        .pipe(gulp.dest('dist/styles'));
+});
+
+gulp.task('critical', ['copystyles'], function () {
+    critical.generateInline({
+        base: 'dist/',
+        src: 'index.html',
+        styleTarget: 'styles/main.css',
+        htmlTarget: 'index.html',
+        width: 2000,
+        height: 2000,
+        minify: true
+    });
+});
+
 // Compile and automatically prefix stylesheets
 gulp.task('styles', function () {
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src([
-    'app/styles/*.scss',
-    'app/styles/**/*.css',
-    'app/styles/components/components.scss'
+    'app/styles/main.scss'
   ])
     .pipe($.sourcemaps.init())
-    .pipe($.changed('.tmp/styles', {extension: '.css'}))
+    //.pipe($.changed('.tmp/styles', {extension: '.css'}))
     .pipe($.sass({
       precision: 10,
       onError: console.error.bind(console, 'Sass error:')
@@ -103,6 +122,9 @@ gulp.task('styles', function () {
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest('.tmp/styles'))
     // Concatenate and minify styles
+    .pipe($.uncss({
+        html: ['app/index.html']
+    }))
     .pipe($.if('*.css', $.csso()))
     .pipe(gulp.dest('dist/styles'))
     .pipe($.size({title: 'styles'}));
@@ -185,7 +207,11 @@ gulp.task('default', ['clean', 'serve'], function (cb) {
 });
 
 gulp.task('compile', ['clean'], function(cb) {
-  runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'copy', 'compress'], cb);
+  runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'copy'], function(){
+    runSequence('critical',  function(){
+      cb();
+    })
+  });
 });
 
 // Run PageSpeed Insights

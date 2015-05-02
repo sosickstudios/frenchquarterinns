@@ -49,6 +49,12 @@ gulp.task('jshint', function () {
     .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
 });
 
+gulp.task("compress", function() {
+    gulp.src('dist/**/*.*')
+    .pipe($.zopfli())
+    .pipe(gulp.dest('dist/'));
+});
+
 // Optimize images
 gulp.task('images', function () {
   return gulp.src('app/images/**/*')

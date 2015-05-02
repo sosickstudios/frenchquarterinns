@@ -26,16 +26,17 @@ $aj-primary-gold: #9d8a10;
 
 
 html {
+
+}
+
+body {
   background-color: #000;
   background: url(/images/Background.jpg) no-repeat center center fixed;
+  min-height: 100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
-
-body {
-  position: relative;
   background-color: #000;
   font-family: 'Droid Serif', serif;
   font-weight: 300;

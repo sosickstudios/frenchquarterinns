@@ -24,6 +24,7 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var del = require('del');
 var critical = require('critical');
+var pngquant = require('imagemin-pngquant');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var pagespeed = require('psi');
@@ -61,7 +62,9 @@ gulp.task('images', function () {
   return gulp.src('app/images/**/*')
     .pipe($.cache($.imagemin({
       progressive: true,
-      interlaced: true
+      interlaced: true,
+      svgoPlugins: [{removeViewBox: false}],
+      use: [pngquant()]
     })))
     .pipe(gulp.dest('dist/images'))
     .pipe($.size({title: 'images'}));
@@ -208,7 +211,7 @@ gulp.task('default', ['clean', 'serve'], function (cb) {
 
 gulp.task('compile', ['clean'], function(cb) {
   runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'copy'], function(){
-    runSequence('critical',  function(){
+    runSequence('critical', 'compress', function(){
       cb();
     })
   });

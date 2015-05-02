@@ -28,7 +28,8 @@
     "run-sequence": "^1.0.1",
     "gulp-zopfli": "^1.0.0",
     "gulp-rename": "^1.2.2",
-    "critical": "^0.5.7"
+    "critical": "^0.5.7",
+    "imagemin-pngquant": "^4.1.0"
   },
   "engines": {
     "node": ">=0.10.0"

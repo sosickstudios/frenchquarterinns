@@ -218,7 +218,7 @@ gulp.task('default', ['clean', 'serve'], function (cb) {
 gulp.task('compile', ['clean'], function(cb) {
   runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'copy'], function(){
     setTimeout(function(){
-      runSequence('compress', function(){
+      runSequence('inline', 'compress', function(){
         cb();
       });
     }, 100);

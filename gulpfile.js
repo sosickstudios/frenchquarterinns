@@ -169,6 +169,12 @@ gulp.task('html', function () {
     .pipe($.size({title: 'html'}));
 });
 
+gulp.task('inline', function(){
+  return gulp.src(['dist/index.html'])
+    .pipe($.inlineCss())
+    .pipe(gulp.dest('dist/'));
+});
+
 // Clean output directory
 gulp.task('clean', del.bind(null, ['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
 
@@ -211,9 +217,11 @@ gulp.task('default', ['clean', 'serve'], function (cb) {
 
 gulp.task('compile', ['clean'], function(cb) {
   runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'copy'], function(){
-    runSequence('critical', 'compress', function(){
-      cb();
-    })
+    setTimeout(function(){
+      runSequence('compress', function(){
+        cb();
+      });
+    }, 100);
   });
 });
 

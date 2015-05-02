@@ -171,8 +171,9 @@ gulp.task('html', function () {
 
 gulp.task('inline', function(){
   return gulp.src(['dist/index.html'])
-    .pipe($.inlineCss())
-    .pipe(gulp.dest('dist/'));
+    .pipe($.inlineSource())
+    .pipe(gulp.dest('dist/'))
+    .pipe($.size({title: 'inline'}));
 });
 
 // Clean output directory

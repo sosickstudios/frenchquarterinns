@@ -49,8 +49,8 @@ gulp.task('jshint', function () {
     .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
 });
 
-gulp.task("compress", function() {
-    gulp.src('dist/**/*.*')
+gulp.task('compress', function() {
+  return gulp.src('dist/**/*.*')
     .pipe($.zopfli())
     .pipe(gulp.dest('dist/'));
 });

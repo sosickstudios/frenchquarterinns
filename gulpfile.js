@@ -97,18 +97,6 @@ gulp.task('copystyles', function () {
         .pipe(gulp.dest('dist/styles'));
 });
 
-gulp.task('critical', ['copystyles'], function () {
-    critical.generateInline({
-        base: 'dist/',
-        src: 'index.html',
-        styleTarget: 'styles/main.css',
-        htmlTarget: 'index.html',
-        width: 2000,
-        height: 2000,
-        minify: true
-    });
-});
-
 // Compile and automatically prefix stylesheets
 gulp.task('styles', function () {
   // For best performance, don't add Sass partials to `gulp.src`

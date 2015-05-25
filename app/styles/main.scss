@@ -36,6 +36,7 @@ html {
 body {
   font-family: 'Droid Serif', serif;
   font-weight: 300;
+  min-height: 950px;
 }
 
 .home--header {
@@ -143,11 +144,28 @@ main.home {
         font-size: 3.0em;
       }
 
-      p.hotel--description {
-        height: 100%;
-        padding: 0 20px;
-        font-size: 0.9em;
-        line-height: 1.4em;
+      div.hotel--descriptions {
+        min-height: 250px;
+        
+        p {
+          height: 100%;
+          margin-top: 15px;
+          padding: 0 20px;
+          font-size: 0.9em;
+          line-height: 1.4em;          
+        }
+      }
+
+      div.hotel_description--address {
+        width: 100%;
+        margin-top: 15px;
+        p {
+          margin: 0 auto;
+          text-align: center;
+          font-size: 0.9em;
+          padding: 0 20px;
+          line-height: 1.4em;
+        }
       }
 
       ul.hotel--pictures {
@@ -199,7 +217,11 @@ main.home {
         color: #dacfb7;
       }
 
-      p.hotel--description {
+      div.hotel--descriptions p {
+        color: $aj-secondary-tan;
+      }
+
+      div.hotel_description--address p {
         color: $aj-secondary-tan;
       }
 
@@ -229,7 +251,11 @@ main.home {
         color: #e8eff2;
       }
 
-      p.hotel--description {
+      div.hotel--descriptions p {
+        color: $sp-primary-white;
+      }
+
+      div.hotel_description--address p {
         color: $sp-primary-white;
       }
 

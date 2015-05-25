@@ -8,7 +8,7 @@
 
 # THANKS
 
-  <name>
+  Eddie Jacobs -- FrenchQuarterInns.com
 
 # TECHNOLOGY COLOPHON
 

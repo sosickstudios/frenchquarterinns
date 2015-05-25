@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
-  "name": "Web Starter Kit",
+  "name": "French Quarter Inns",
   "launch_path": "/index.html",
-  "description": Description HEre",
+  "description": "French Quarter Inns",
   "icons": {
     "128": "/images/touch/icon-128x128.png"
   },
@@ -19,7 +19,7 @@
   "locales": {
     "en": {
       "name": "FrenchQuarterInns.com",
-      "description": "Description Here"
+      "description": "French Quarter Inns"
     }
   }
 }

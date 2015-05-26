@@ -146,12 +146,16 @@ main.home {
 
       div.hotel--descriptions {
         min-height: 250px;
-        
+
         p {
+          &:first-child {
+            min-height: 125px;
+          }
+          // font-weight: 700;
           height: 100%;
           margin-top: 15px;
           padding: 0 20px;
-          font-size: 0.9em;
+          font-size: 1.0em;
           line-height: 1.4em;          
         }
       }
@@ -159,10 +163,17 @@ main.home {
       div.hotel_description--address {
         width: 100%;
         margin-top: 15px;
+        
+        a {
+          display: block;
+        }
+
+        a,
         p {
+          // font-weight: 700;
           margin: 0 auto;
           text-align: center;
-          font-size: 0.9em;
+          font-size: 1.0em;
           padding: 0 20px;
           line-height: 1.4em;
         }
@@ -218,11 +229,16 @@ main.home {
       }
 
       div.hotel--descriptions p {
-        color: $aj-secondary-tan;
+        color: #F0EFEC;
+        //color: $aj-secondary-tan;
       }
 
-      div.hotel_description--address p {
-        color: $aj-secondary-tan;
+      div.hotel_description--address {
+        a {
+          color: #F0EFEC;
+        }
+        color: #F0EFEC;
+        //color: $aj-secondary-tan;
       }
 
       button.hotel--reservations {
@@ -255,7 +271,11 @@ main.home {
         color: $sp-primary-white;
       }
 
-      div.hotel_description--address p {
+      div.hotel_description--address {
+        a {
+          color: $sp-primary-white;
+        }
+
         color: $sp-primary-white;
       }
 

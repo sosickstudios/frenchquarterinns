@@ -43,7 +43,7 @@
         <div id="hub_aj--panel" class="g--half hotel-aj--panel">
           <img class="hotel--logo" alt="Andrew Jackson" src="/images/AJ-Logo.png" width="555" height="195" />
 
-          <label class="hotel--firstletter">A</label>
+          <label class="hotel--firstletter">S</label>
           <div class="hotel--descriptions">
             <p>Steeped with American history, Creole culture and 18th century design, the Andrew Jackson Hotel is a hidden gem in the Vieux Carre. With its historic past, prominent location and modern day amenities, the Andrew Jackson is the perfect property for your stay in the New Orleans French Quarter.</p> 
 
@@ -53,7 +53,7 @@
           </div>
           <div class="hotel_description--address">
             <p>919 Royal St, New Orleans, LA 70116</p>
-            <p>(504) 561-5881</p>
+            <a href="tel:+15045615881">(504) 561-5881</a>
           </div>
           <ul class="hotel--pictures">
             <li><img src="/images/AJ-Fountain.png" alt="Andrew Jackson Fountain" /></li>
@@ -63,14 +63,14 @@
           </ul>
 
           <!-- <p class="hotel--address">919 Royal St. New Orleans, LA</p> -->
-          <button class="hotel--reservations">Reservations</button>
+          <button id="aj_button--reservations" class="hotel--reservations">Reservations</button>
         </div>
 
         <!-- St. Pierre Hotel Panel -->
         <div id="hub_sp--panel" class="g--half g--last hotel-sp--panel">
           <img class="hotel--logo" alt="St. Pierre" src="/images/SP-Logo.png" width="555" height="195"/>
 
-          <label class="hotel--firstletter">S</label>
+          <label class="hotel--firstletter">R</label>
           <div class="hotel--descriptions">
             <p>Rich in history and charm, the Hotel St. Pierre is located in the world-famous French Quarter. Comprised of eleven Creole cottages and surrounded by six lush, tropical courtyards, the Hotel St. Pierre offers luxury at its finest. True to our origins, Hotel St. Pierre is outfitted with boutique touches and period furniture dating back to the 18th century.</p>
 
@@ -80,7 +80,7 @@
           </div>
           <div class="hotel_description--address">
             <p>911 Burgundy St, New Orleans, LA 70116</p>
-            <p>(504) 524-4401</p>
+            <a href="tel:+15045244401">(504) 524-4401</a>
           </div>
           <ul class="hotel--pictures">
             <li><img src="/images/SP-GuestRoom.png" alt="St. Pierre Guest Room" /></li>
@@ -88,22 +88,21 @@
             <li><img src="/images/SP-Entrance.png" alt="St. Pierre Entrance" /></li>
           </ul>
 
-          <!-- <p class="hotel--address">911 Burgundy St. New Orleans, LA</p> -->
-          <button class="hotel--reservations">Reservations</button>
+          <button id="sp_button--reservations" class="hotel--reservations">Reservations</button>
         </div>
       </section>
     </main>
 
     <script async type="text/javascript" language="javascript">
       (function (){
-        var ajPanel = document.getElementById('hub_aj--panel');
-        var spPanel = document.getElementById('hub_sp--panel');
+        var ajButton = document.getElementById('aj_button--reservations');
+        var spButton = document.getElementById('sp_button--reservations');
 
-        ajPanel.addEventListener('click', function onAJClick (event){
+        ajButton.addEventListener('click', function onAJClick (event){
           window.location = 'http://www.andrewjacksonhotel.com/';
         });
 
-        spPanel.addEventListener('click', function onSPClick (event){
+        spButton.addEventListener('click', function onSPClick (event){
           window.location = 'http://www.hotelstpierre.com/';
         });
       })();

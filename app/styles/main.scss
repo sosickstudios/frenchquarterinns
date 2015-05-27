@@ -122,6 +122,7 @@ main.home {
 
     .hotel-aj--panel,
     .hotel-sp--panel {
+
       min-height: inherit;
       border: 0 solid rgba(#fff, 0.7);
       padding-bottom: 40px;
@@ -149,14 +150,13 @@ main.home {
 
         p {
           &:first-child {
-            min-height: 150px;
+            min-height: 160px;
           }
 
           &:nth-child(2){
-            min-height: 85px;
+            min-height: 100px;
           }
 
-          // font-weight: 700;
           height: 100%;
           margin-top: 15px;
           padding: 0 20px;
@@ -165,9 +165,68 @@ main.home {
         }
       }
 
+      @media all and (min-width: 801px) and (max-width: 990px){
+
+        div.hotel--descriptions {
+          p{
+            &:first-child {
+              min-height: 200px;
+            }
+
+            &:nth-child(2){
+              min-height: 111px;
+            }
+
+            &:nth-child(3){
+              min-height: 50px;
+            }
+          }   
+        }
+      }
+
+      @media all and (min-width: 751px) and (max-width: 800px){
+
+        div.hotel--descriptions {
+          p{
+            &:first-child {
+              min-height: 225px;
+            }
+
+            &:nth-child(2){
+              min-height: 135px;
+            }
+
+            &:nth-child(3){
+              min-height: 67px;
+            }
+          }   
+        }
+      }
+
+      @media all and (min-width: 621px) and (max-width: 750px){
+        div.hotel--descriptions {
+          p{
+            &:first-child {
+              min-height: 265px;
+            }
+
+            &:nth-child(2){
+              min-height: 155px;
+            }
+
+            &:nth-child(3){
+              min-height: 70px;
+            }
+          }   
+        }
+      }
+
+
+
       div.hotel_description--address {
         width: 100%;
         margin-top: 15px;
+        min-height: 70px;
         
         a {
           display: block;
@@ -227,6 +286,10 @@ main.home {
       background-color: rgba($aj-primary-tan, 0.7);
       border-width: 1px 0 1px 1px;
 
+      @media all and (max-width: 618px){
+        border-width: 1px 1px 1px 1px;
+      }
+
       label.hotel--firstletter {
         border-color: rgba(#fff, 0.35);
         background-color: rgba(#fff, 0.15);
@@ -265,6 +328,10 @@ main.home {
     .hotel-sp--panel {
       background-color: rgba($sp-secondary-blue, 0.7);
       border-width: 1px 1px 1px 0;
+
+      @media all and (max-width: 619px){
+        border-width: 1px 1px 1px 1px;
+      }
 
       label.hotel--firstletter {
         border-color: rgba(#e8eff2, 0.35);

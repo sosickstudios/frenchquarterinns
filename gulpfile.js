@@ -27,7 +27,6 @@ var critical = require('critical');
 var pngquant = require('imagemin-pngquant');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
-var pagespeed = require('psi');
 var reload = browserSync.reload;
 
 var AUTOPREFIXER_BROWSERS = [
@@ -205,24 +204,13 @@ gulp.task('default', ['clean', 'serve'], function (cb) {
 });
 
 gulp.task('compile', ['clean'], function(cb) {
-  runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'copy'], function(){
+  runSequence('styles', ['html', 'images', 'fonts', 'copy'], function(){
     setTimeout(function(){
       runSequence('inline', 'compress', function(){
         cb();
       });
     }, 100);
   });
-});
-
-// Run PageSpeed Insights
-gulp.task('pagespeed', function (cb) {
-  // Update the below URL to the public URL of your site
-  pagespeed.output('example.com', {
-    strategy: 'mobile',
-    // By default we use the PageSpeed Insights free (no API key) tier.
-    // Use a Google Developer API key if you have one: http://goo.gl/RkN0vE
-    // key: 'YOUR_API_KEY'
-  }, cb);
 });
 
 // Load custom tasks from the `tasks` directory

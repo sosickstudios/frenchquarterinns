@@ -1,5 +1,15 @@
 .tmp/
 node_modules/
 .DS_STORE
-dist
+dist/fonts/
+dist/images/
+dist/scripts/
+dist/styles/
+dist/.htaccess
+dist/*.html
+dist/*.ico
+dist/*.gz
+dist/*.json
+dist/*.webapp
+dist/*.txt
 *.gz

@@ -3,8 +3,6 @@
 echo "Building BUILD image"
 docker build -t builder .
 
-cd ../
-
 echo "Starting BUILD container"
 docker run -it --rm -v "$PWD":/frenchquarterinns builder
 

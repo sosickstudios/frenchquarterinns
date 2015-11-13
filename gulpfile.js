@@ -164,7 +164,7 @@ gulp.task('inline', function(){
 });
 
 // Clean output directory
-gulp.task('clean', del.bind(null, ['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
+gulp.task('clean', del.bind(null, ['.tmp', 'dist/*', '!dist/.git', '!dist/.dockerignore', '!dist/Dockerfile'], {dot: true}));
 
 // Watch files for changes & reload
 gulp.task('serve', ['styles'], function () {

@@ -12,7 +12,7 @@ echo "Building WEBAPP image"
 docker build -t webapp .
 
 echo "Starting WEBSERVER container"
-docker run -d --name webserver -p 80:80 webapp
+docker run --restart=always -d --name webserver -p 80:80 webapp
 
 servername="http://frenchquarterinns.com"
 response=$(curl --write-out %{http_code} --silent --output /dev/null $servername)

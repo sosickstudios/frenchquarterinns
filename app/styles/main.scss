@@ -39,6 +39,7 @@ body {
   min-height: 950px;
 }
 
+
 .home--header {
   text-align: center;
   padding-top: 20px;
@@ -307,6 +308,7 @@ main.home {
         color: #dacfb7;
       }
 
+      a.hotel-link,
       div.hotel--descriptions p {
         color: #F0EFEC;
         //color: $aj-secondary-tan;
@@ -350,6 +352,7 @@ main.home {
         color: #e8eff2;
       }
 
+      a.hotel-link,
       div.hotel--descriptions p {
         color: $sp-primary-white;
       }

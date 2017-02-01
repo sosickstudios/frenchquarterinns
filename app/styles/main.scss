@@ -157,11 +157,15 @@ main.home {
 
         p {
           &:first-child {
-            min-height: 160px;
+            min-height: 200px;
           }
 
           &:nth-child(2){
-            min-height: 100px;
+            min-height: 110px;
+          }
+
+          &:nth-child(3){
+            min-height: 80px;
           }
 
           height: 100%;
@@ -177,7 +181,7 @@ main.home {
         div.hotel--descriptions {
           p{
             &:first-child {
-              min-height: 200px;
+              min-height: 250px;
             }
 
             &:nth-child(2){
@@ -196,15 +200,15 @@ main.home {
         div.hotel--descriptions {
           p{
             &:first-child {
-              min-height: 225px;
+              min-height: 245px;
             }
 
             &:nth-child(2){
-              min-height: 135px;
+              min-height: 150px;
             }
 
             &:nth-child(3){
-              min-height: 67px;
+              min-height: 85px;
             }
           }
         }
